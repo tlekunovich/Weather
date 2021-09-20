@@ -43,7 +43,7 @@ const keyPress =(event)=>{
       const cityList = cities.map((elem, index) => {
           
     return (
-                index <= 6 && <option>{elem}</option>
+                index <= 6 && <option key={index}>{elem}</option>
            )
 }
 )

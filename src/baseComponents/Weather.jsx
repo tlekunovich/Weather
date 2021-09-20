@@ -1,4 +1,4 @@
-import React, { useState, useEffect,useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import style from './Weather.module.css';
 import { WeatherBody } from './WeatherBody';
 import WeatherSearchBlock from './WeatherSearchBlock';
@@ -63,6 +63,7 @@ const Weather = (props) => {
             let resp = await fetch(url);
             resp = await resp.json();
             props.setWeatherData(resp);
+            console.log('wd',weatherData)
             toggleLoading(false);
 
             const isSetCities = resp.cod === 200 && !cities.includes(city)
